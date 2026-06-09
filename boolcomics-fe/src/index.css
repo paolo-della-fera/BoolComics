@@ -1,0 +1,417 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* =========================
+   GLOBAL
+========================= */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+}
+
+/* ==========================================================================
+   CYBER-COMIC HEADER & NAVBAR
+   ========================================================================== */
+
+/* Link testuali con sottolineatura spessa pop-art animata */
+.custom-cyber-link {
+  font-family: "Impact", "Arial Black", sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #111 !important;
+  padding: 6px 12px !important;
+  position: relative;
+  transition: color 0.2s ease;
+  text-align: center;
+}
+
+.custom-cyber-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 12px;
+  right: 12px;
+  height: 5px;
+  background-color: #E63946;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+  z-index: -1;
+}
+
+.custom-cyber-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.custom-cyber-link:hover {
+  color: #000 !important;
+}
+
+/* Bottone cerca minimal reattivo */
+.cyber-icon-btn {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  width: 100%;
+  transition: transform 0.2s ease;
+}
+
+.cyber-icon-btn:hover {
+  transform: scale(1.15);
+}
+
+/* Tasto Carrello a blocco solido nero con ombra rossa/gialla */
+.cyber-cart-btn {
+  font-family: "Impact", "Arial Black", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #111 !important;
+  border: 3px solid #111;
+  padding: 6px 16px !important;
+  border-radius: 0px;
+  /* Angoli netti stile fumetto */
+  box-shadow: 4px 4px 0px #E63946;
+  transition: all 0.15s ease;
+}
+
+.cyber-cart-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #FFC107;
+  /* L'ombra diventa gialla all'hover */
+  background: #111 !important;
+}
+
+/* Badges rettangolari ad alto contrasto per i contatori */
+.small-badge {
+  font-size: 0.75rem;
+  padding: 3px 6px;
+  border-radius: 0px !important;
+}
+
+.extra-small {
+  font-size: 0.7rem;
+}
+
+/* Animazione soft sul logo per dare reattività */
+.navbar-brand img {
+  transition: transform 0.2s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.03);
+}
+
+/* =========================
+   ICON BUTTON & LINKS
+========================= */
+.navbar-brand {
+  padding: 0;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  color: #111111;
+  transition: 0.2s;
+}
+
+.icon-btn:hover {
+  color: #e63946;
+}
+
+/* =========================
+   SEARCHBAR
+========================= */
+.searchbar-wrapper {
+  background-color: #ffffff;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #ececec;
+  padding: 18px 0;
+  display: none;
+  animation: searchFade 0.2s ease;
+}
+
+.searchbar-wrapper.active {
+  display: block;
+}
+
+.searchbar-wrapper .btn,
+.searchbar-wrapper button {
+  background-color: #111 !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 0px !important;
+}
+
+.searchbar-wrapper .btn:hover,
+.searchbar-wrapper button:hover {
+  background-color: #e63946 !important;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 2px solid #111;
+  padding-bottom: 10px;
+}
+
+.searchbar-icon {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.searchbar-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: transparent;
+}
+
+.searchbar-input::placeholder {
+  color: #999;
+}
+
+.searchbar-select {
+  border-radius: 0;
+  border: 2px solid #111;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.searchbar-select:focus {
+  box-shadow: none;
+  border-color: #e63946;
+}
+
+/* =========================
+   PAGE 4O4 NOT FOUND
+========================= */
+.header-404 {
+  width: 100%;
+  border-bottom: 4px solid #111111;
+}
+
+.error-404 {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Ridotto da 120px a un valore più equilibrato e fluido */
+.error-badge {
+  font-family: "Impact", "Arial Black", sans-serif;
+  font-size: 85px;
+  font-weight: 900;
+  color: #E63946;
+  text-transform: uppercase;
+  line-height: 1;
+  text-shadow: 4px 4px 0px #111111;
+  letter-spacing: 2px;
+}
+
+.error-message {
+  line-height: 1.6;
+}
+
+/* =========================
+   SEARCHBAR ANIMATION
+========================= */
+@keyframes searchFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESULTS
+========================= */
+.results-text {
+  font-weight: 600;
+  color: #666;
+}
+
+/* =========================
+   RESULTS === 0
+========================= */
+.search-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.empty-badge {
+  background-color: #de3e4b;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 900;
+  padding: 10px 30px;
+  border-radius: 4px;
+  transform: rotate(-3deg);
+  box-shadow: 4px 4px 0px #111111;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.empty-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111111;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.empty-message {
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.empty-message .highlight {
+  color: #de3e4b;
+  font-weight: 700;
+}
+
+/* =========================
+   SORT SELECT
+========================= */
+.catalog-select {
+  border-radius: 0;
+  border: 2px solid #111;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.catalog-select:focus {
+  box-shadow: none;
+  border-color: #e63946;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+.product-card {
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  transition: 0.25s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================
+   PRODUCT IMAGE
+========================= */
+.product-image-wrapper {
+  overflow: hidden;
+}
+
+.product-image {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.03);
+}
+
+/* =========================
+   PRODUCT TITLE
+========================= */
+.product-title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   PRODUCT PRICE
+========================= */
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   BUY BUTTON
+========================= */
+.buy-btn {
+  background-color: #e63946;
+  color: white;
+  border-radius: 0;
+  border: 2px solid #e63946;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 12px;
+  transition: 0.2s;
+}
+
+.buy-btn:hover {
+  background-color: transparent;
+  color: #e63946;
+}
+
+/* =========================
+   RESPONSIVE OVERRIDES
+========================= */
+@media screen and (max-width: 576px) {
+  .navbar-collapse {
+    padding-top: 20px;
+  }
+
+  .navbar-nav {
+    gap: 10px;
+    align-items: center !important;
+  }
+
+  .searchbar-select {
+    margin-top: 10px;
+  }
+
+  .catalog-title {
+    font-size: 2rem;
+  }
+}
+
+/* Share btn */
+.share-btn {
+  border-radius: 0;
+  border: 2px solid #111;
+  padding: 12px;
+  font-weight: 600;
+
+  background-color: #111;
+  color: #fff;
+
+  transition: .35s;
+}
+
+.share-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #E63946;
+}
